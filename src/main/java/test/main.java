@@ -17,20 +17,19 @@ public class main {
     private static ExecutorService executorService = Executors.newSingleThreadExecutor();
 
     public static void main(String[] args) {
-
-        startTimer();
+            startTimer();
 
 //        String filePath = "D:\\2035\\test.txt";
-        String filePath = args[0];
-        if (!StringUtil.isNullOrEmpty(filePath)) {
-            startReader(filePath);
-        }
-        System.out.println(System.getProperty("user.dir"));
-        MuServer server = httpServer()
-                .withHttpPort(8080)
-                .addHandler(Method.GET, "/getNum/{code}", new GetNumHandler())
-                .addHandler(Method.GET, "/showUpdate", new PublishHandler())
-                .start();
+            String filePath = args[0];
+            if (!StringUtil.isNullOrEmpty(filePath)) {
+                startReader(filePath);
+            }
+            System.out.println(System.getProperty("user.dir"));
+            MuServer server = httpServer()
+                    .withHttpPort(8080)
+                    .addHandler(Method.GET, "/getNum/{code}", new GetNumHandler())
+                    .addHandler(Method.GET, "/showUpdate", new PublishHandler())
+                    .start();
     }
 
     private static void startReader(String filePath) {
@@ -38,6 +37,6 @@ public class main {
     }
 
     private static void startTimer() {
-        scheduledExecutor.scheduleWithFixedDelay(new OutputTimer(), 0, 10, TimeUnit.SECONDS);
+        scheduledExecutor.scheduleWithFixedDelay(new OutputTimer(), 0, 60, TimeUnit.SECONDS);
     }
 }
