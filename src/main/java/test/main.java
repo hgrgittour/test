@@ -37,6 +37,6 @@ public class main {
     }
 
     private static void startTimer() {
-        scheduledExecutor.scheduleWithFixedDelay(new OutputTimer(), 0, 60, TimeUnit.SECONDS);
+        scheduledExecutor.scheduleWithFixedDelay(new OutputTimer(), 0, 30, TimeUnit.SECONDS);
     }
 }
