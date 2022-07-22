@@ -11,5 +11,5 @@ need to save after one line complete.
 when program running , you can use http://localhost:8080/getNum/CNY to check each currency amount
 and http://localhost:8080/showUpdate to monitor currency and amount update.
 Also console log output current currency ,show once every 60 seconds
-For time reasons, I use a round-robin approach to get file changes and message queue changes, which can be implemented in better ways, such as event response.
+For time reasons, file read need change to event drive
 It also does not include automated tests...
