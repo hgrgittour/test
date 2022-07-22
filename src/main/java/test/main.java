@@ -18,8 +18,6 @@ public class main {
 
     public static void main(String[] args) {
             startTimer();
-
-//        String filePath = "D:\\2035\\test.txt";
             String filePath = args[0];
             if (!StringUtil.isNullOrEmpty(filePath)) {
                 startReader(filePath);
