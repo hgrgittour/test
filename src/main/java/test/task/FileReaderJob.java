@@ -49,30 +49,4 @@ public class FileReaderJob implements Runnable {
             e.printStackTrace();
         }
     }
-
-    //    @Override
-    public void run2() {
-        BufferedReader buffReader = null;
-        try {
-            FileInputStream fin = new FileInputStream(filePath);
-            InputStreamReader reader = new InputStreamReader(fin);
-            buffReader = new BufferedReader(reader);
-            String strTmp = "";
-            while (true) {
-                //check
-                strTmp = buffReader.readLine();
-                if (strTmp != null && strTmp.equals("quit")) {
-                    System.exit(0);
-                }
-                if (!StringUtil.isNullOrEmpty(strTmp)) {
-                    String[] s = strTmp.split(" ");
-                    CollectionDb.set(s[0], Integer.valueOf(s[1]));
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            System.exit(0);
-        }
-    }
 }
