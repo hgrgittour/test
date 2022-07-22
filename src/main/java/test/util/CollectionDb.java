@@ -14,7 +14,7 @@ public class CollectionDb {
         return map.get(key);
     }
 
-    public static void set(String key, Integer value) {
+    public static void set(String key, Integer value) throws InterruptedException {
         Currency currency = Currency.valueOf(key);
         synchronized (currency) {
             Integer s = map.get(key);
@@ -27,7 +27,7 @@ public class CollectionDb {
         Payment payment = new Payment();
         payment.setCurrency(key);
         payment.setAmount(value);
-        queue.add(payment);
+        queue.put(payment);
     }
 
     public static void forEachMap() {
@@ -38,7 +38,7 @@ public class CollectionDb {
         });
     }
 
-    public static Payment pollQueue() {
-        return queue.poll();
+    public static Payment pollQueue() throws InterruptedException {
+        return queue.take();
     }
 }
