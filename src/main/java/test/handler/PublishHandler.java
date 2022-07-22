@@ -1,6 +1,6 @@
 package test.handler;
 
-import test.util.Payment;
+import test.data.Payment;
 import test.util.CollectionDb;
 import io.muserver.MuRequest;
 import io.muserver.MuResponse;

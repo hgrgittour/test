@@ -1,4 +1,4 @@
-package test.util;
+package test.data;
 
 public class Payment {
     private String Currency;

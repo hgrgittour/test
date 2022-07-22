@@ -17,17 +17,17 @@ public class main {
     private static ExecutorService executorService = Executors.newSingleThreadExecutor();
 
     public static void main(String[] args) {
-            startTimer();
-            String filePath = args[0];
-            if (!StringUtil.isNullOrEmpty(filePath)) {
-                startReader(filePath);
-            }
-            System.out.println(System.getProperty("user.dir"));
-            MuServer server = httpServer()
-                    .withHttpPort(8080)
-                    .addHandler(Method.GET, "/getNum/{code}", new GetNumHandler())
-                    .addHandler(Method.GET, "/showUpdate", new PublishHandler())
-                    .start();
+        startTimer();
+//            String filePath = args[0];
+        String filePath = "D:\\testmodifyfile";
+        if (!StringUtil.isNullOrEmpty(filePath)) {
+            startReader(filePath);
+        }
+        MuServer server = httpServer()
+                .withHttpPort(8080)
+                .addHandler(Method.GET, "/getNum/{code}", new GetNumHandler())
+                .addHandler(Method.GET, "/showUpdate", new PublishHandler())
+                .start();
     }
 
     private static void startReader(String filePath) {

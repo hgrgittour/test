@@ -2,8 +2,8 @@ package test.util;
 
 
 import test.constant.Currency;
+import test.data.Payment;
 
-import javax.management.monitor.Monitor;
 import java.util.concurrent.*;
 
 public class CollectionDb {
