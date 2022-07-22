@@ -1,13 +1,8 @@
 package test.task;
 
-import test.constant.Currency;
 import test.util.CollectionDb;
 import io.netty.util.internal.StringUtil;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.*;
 import java.util.List;
 
@@ -21,7 +16,6 @@ public class FileReaderJob implements Runnable {
     @Override
     public void run() {
         try {
-
             WatchService watchService = FileSystems.getDefault().newWatchService();
             Path path = Paths.get(filePath);
             path.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
